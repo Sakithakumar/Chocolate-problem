@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function moveEmpty(arr) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] !== 0) {
+                    arr[count] = arr[i];
+                    count++;
+                }
+            }
+            while (count < arr.length) {
+                arr[count++] = 0;
+            }
+            return arr;
+        }
+        const u = prompt("Enter the chocolate packets (comma-separated integers):");
+        const chocolates = u.split(',').map(Number);
+        const result = moveEmpty(chocolates);
+        console.log(result);
+    </script>
+</body>
+</html>
